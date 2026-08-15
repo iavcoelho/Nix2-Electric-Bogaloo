@@ -63,6 +63,11 @@
           system = "aarch64-darwin";
           username = "iavcoelho";
         };
+
+        mitnick = {
+          system = "aarch64-linux";
+          username = "ashe";
+        };
       };
 
       isDarwin = _: cfg: lib.hasSuffix "-darwin" cfg.system;
