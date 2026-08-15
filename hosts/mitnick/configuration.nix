@@ -2,8 +2,11 @@
 {
   networking.hostName = "mitnick";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 0;
+  };
 
   users.users.${username} = {
     isNormalUser = true;
@@ -12,9 +15,12 @@
     ];
   };
 
+  virtualisation.rosetta.enable = true;
+
   my.modules = {
     iwd.enable = true;
     shell.enable = true;
+    pentesting.enable = true;
   };
 
   my.services = {

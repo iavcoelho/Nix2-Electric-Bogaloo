@@ -1,4 +1,4 @@
 { mylib, ... }:
 {
-  imports = mylib.autoImport [] ./.;
+  imports = mylib.autoImport [ ] ./.;
 }
