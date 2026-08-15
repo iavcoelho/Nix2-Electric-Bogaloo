@@ -1,0 +1,11 @@
+keys:
+  - &admin age1xw8q35v6nq2c6ynzewheln6mq37kwnn8ncysg5kn6te95tj4yuzs5mh3r8
+  - &creampie age1lwk3yt3qrw33wnhgd9r89sud68ch4ahd2wsarj23eaquevt5jspsstc4s6
+
+  
+creation_rules:
+  - path_regex: secrets/creampie\.yaml$
+    key_groups:
+      - age:
+          - *admin
+          - *creampie

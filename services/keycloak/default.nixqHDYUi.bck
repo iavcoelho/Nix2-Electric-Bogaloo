@@ -1,0 +1,58 @@
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.my.services.keycloak;
+  caddyHost = config.my.services.caddy.hostName;
+  externalUrl = "https://${caddyHost}/auth";
+in
+{
+  options.my.services.keycloak.enable = lib.mkEnableOption "Keycloak OIDC provider";
+
+  config = lib.mkIf (cfg.enable && pkgs.stdenv.isLinux) {
+    services.keycloak = {
+      enable = true;
+
+      settings = {
+        hostname = externalUrl;
+        http-relative-path = "/auth";
+
+        http-host = "127.0.0.1";
+        http-port = 8080;
+        http-enabled = true;
+
+        proxy-headers = "xforwarded";
+
+        features = "declarative-ui";
+      };
+
+      realmFiles = [
+        ./homelab-realm.json
+      ];
+
+      database = {
+        type = "postgresql";
+        createLocally = true;
+        username = "keycloak";
+        passwordFile = config.sops.secrets.keycloak-db-password.path;
+      };
+
+      initialAdminPassword = "changeme";
+    };
+
+    sops.secrets.keycloak-db-password = {
+      restartUnits = [ "keycloak.service" ];
+    };
+
+    services.caddy.virtualHosts.${caddyHost}.extraConfig = lib.mkAfter ''
+      redir /auth /auth/ permanent
+
+      handle /auth/* {
+        reverse_proxy 127.0.0.1:8080
+      }
+    '';
+  };
+}

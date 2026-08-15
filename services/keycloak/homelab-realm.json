@@ -1,0 +1,56 @@
+{
+  "realm": "homelab",
+  "enabled": true,
+  "displayName": "Homelab",
+
+  "clients": [
+    {
+      "clientId": "oauth2-proxy",
+      "name": "OAuth2 Proxy",
+      "protocol": "openid-connect",
+      "enabled": true,
+      "publicClient": false,
+      "bearerOnly": false,
+
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+
+      "redirectUris": [
+        "https://auth.creampie.lan/oauth2/callback"
+      ],
+      "webOrigins": [
+        "https://auth.creampie.lan"
+      ],
+
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    },
+    {
+      "clientId": "hermes-dashboard",
+      "name": "Hermes Dashboard",
+      "protocol": "openid-connect",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "IDJQNJx6FLfe7tx8Smp92acjOdjtZvVhLdqQQ0FrbHA9Mz6MCiUSMWOvgsw5SmwGGBtaToSl67MD8lx5pU7brq",
+      "bearerOnly": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+      "redirectUris": [
+        "https://hermes.creampie.home/auth/callback"
+      ],
+      "webOrigins": [
+        "https://hermes.creampie.home"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ]
+}
