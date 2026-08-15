@@ -48,7 +48,6 @@
           builder = inputs.nixos-raspberrypi.lib.nixosSystem;
 
           extraModules = [
-            inputs.hermes-agent.nixosModules.default
             inputs.nixos-raspberrypi.nixosModules.trusted-nix-caches
             inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.base
             inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.display-vc4

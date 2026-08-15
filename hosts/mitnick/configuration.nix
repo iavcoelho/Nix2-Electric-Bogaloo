@@ -2,6 +2,9 @@
 {
   networking.hostName = "mitnick";
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [

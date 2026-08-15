@@ -30,6 +30,8 @@ let
   };
 in
 {
+  imports = [ inputs.hermes-agent.nixosModules.default ];
+
   options.my.services.hermes = {
     dashboard.enable = lib.mkEnableOption "Hermes AI companion WebUI";
 
