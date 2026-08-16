@@ -36,9 +36,10 @@ let
     };
 
     monitor = {
-      output = "";
-      mode = "preferred";
+      output = "Virtual-1";
+      mode = "1920x1200@60";
       position = "auto";
+      scale = 1;
     };
 
     bind = [
