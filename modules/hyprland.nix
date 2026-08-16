@@ -28,6 +28,11 @@ let
     config = {
       cursor.no_hardware_cursors = 1;
       animations.enabled = false;
+
+      input = {
+        kb_layout = "pt";
+        kb_variant = "mac";
+      };
     };
 
     bind = [
