@@ -8,6 +8,8 @@
     timeout = 0;
   };
 
+  environment.etc.hosts.enable = false;
+
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
@@ -20,6 +22,7 @@
   my.modules = {
     iwd.enable = true;
     shell.enable = true;
+    podman.enable = true;
     pentesting.enable = true;
   };
 
