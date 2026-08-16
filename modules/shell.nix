@@ -15,11 +15,17 @@ in
     programs.fish.enable = true;
     users.users.${username}.shell = pkgs.fish;
 
+    programs.zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     environment.systemPackages = with pkgs; [
       git
       gh
       devenv
       python3
+      ripgrep
     ];
   };
 }
