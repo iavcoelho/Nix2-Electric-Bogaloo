@@ -26,6 +26,7 @@
     podman.enable = true;
     pentesting.enable = true;
     hyprland.enable = true;
+    firefox.enable = true;
   };
 
   my.services = {

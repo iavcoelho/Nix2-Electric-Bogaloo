@@ -35,6 +35,12 @@ let
       };
     };
 
+    monitor = {
+      output = "";
+      mode = "preferred";
+      position = "auto";
+    };
+
     bind = [
       (mkBind "T" "exec_cmd(\"foot\")")
       (mkBind "Q" "window.close()")
