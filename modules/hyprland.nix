@@ -42,6 +42,14 @@ let
       scale = 1.33;
     };
 
+    window_rule = {
+      match = {
+        title = "quickshell-launcher";
+      };
+      float = true;
+      center = true;
+    };
+
     bind = [
       (mkBind "T" "exec_cmd(\"foot\")")
       (mkBind "Q" "window.close()")

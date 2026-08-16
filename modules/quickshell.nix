@@ -41,14 +41,12 @@ in
           FloatingWindow {
             id: launcher
             visible: false
+            title: "quickshell-launcher"
 
             width: 600
             height: 500
             color: "#dd181825"
             radius: 12
-
-            x: (screen.width - width) / 2
-            y: (screen.height - height) / 2
 
             property string query: ""
 
