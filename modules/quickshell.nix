@@ -92,6 +92,16 @@ in
               id: filtered
             }
 
+            // DesktopEntries.applications populates asynchronously after config
+            // load, so re-collect whenever it changes.
+            Connections {
+              target: DesktopEntries
+              function onApplicationsChanged() {
+                launcher.collectApps()
+                launcher.refilter()
+              }
+            }
+
             // Dismiss on click outside the box
             MouseArea {
               anchors.fill: parent
