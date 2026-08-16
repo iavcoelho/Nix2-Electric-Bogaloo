@@ -19,6 +19,8 @@ in
       };
     };
 
+    programs.btop.enable = true;
+
     programs.zoxide = {
       enable = true;
       enableFishIntegration = true;
