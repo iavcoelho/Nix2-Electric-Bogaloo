@@ -39,7 +39,7 @@ let
       output = "Virtual-1";
       mode = "2560x1600@60";
       position = "auto";
-      scale = 1;
+      scale = 1.33;
     };
 
     bind = [
@@ -107,7 +107,7 @@ in
 
       xdg.configFile."foot/foot.ini".text = ''
         [main]
-        font=monospace:size=18
+        font=monospace:size=16
       '';
 
       wayland.windowManager.hyprland = {
