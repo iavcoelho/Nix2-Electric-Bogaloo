@@ -59,7 +59,7 @@ in
     services.greetd = {
       enable = true;
       settings.default_session.command =
-        "${lib.getExe pkgs.greetd.tuigreet} --time --cmd niri-session";
+        "${lib.getExe pkgs.tuigreet} --time --cmd niri-session";
     };
 
     home-manager.sharedModules = [ inputs.niri.homeModules.niri ];
