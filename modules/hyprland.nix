@@ -102,6 +102,11 @@ in
     home-manager.users.${username} = {
       home.packages = with pkgs; [ foot ];
 
+      xdg.configFile."foot/foot.ini".text = ''
+        [main]
+        font=monospace:size=18
+      '';
+
       wayland.windowManager.hyprland = {
         enable = true;
         configType = "lua";
