@@ -45,8 +45,6 @@ in
 
             width: 600
             height: 500
-            color: "#dd181825"
-            radius: 12
 
             property string query: ""
 
@@ -97,10 +95,17 @@ in
               id: apps
             }
 
-            ColumnLayout {
+            Rectangle {
               anchors.fill: parent
-              anchors.margins: 16
-              spacing: 12
+              color: "#dd181825"
+              radius: 12
+              border.color: "#33ffffff"
+              border.width: 1
+
+              ColumnLayout {
+                anchors.fill: parent
+                anchors.margins: 16
+                spacing: 12
 
               Rectangle {
                 Layout.fillWidth: true
@@ -200,6 +205,7 @@ in
                   }
                 }
               }
+            }
             }
           }
 
