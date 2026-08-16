@@ -46,6 +46,8 @@ let
       (mkBind "Q" "window.close()")
       (mkBind "SHIFT + E" "exit()")
 
+      (mkBind "SPACE" "global(\"quickshell:launcher\")")
+
       (mkFocus "left")
       (mkFocus "right")
       (mkFocus "up")
