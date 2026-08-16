@@ -27,6 +27,7 @@ let
 
     config = {
       cursor.no_hardware_cursors = 1;
+      animations.enabled = false;
     };
 
     bind = [
@@ -84,7 +85,7 @@ in
     services.greetd = {
       enable = true;
       settings.default_session.command =
-        "${lib.getExe pkgs.tuigreet} --time --cmd Hyprland";
+        "${lib.getExe pkgs.tuigreet} --time --cmd start-hyprland";
     };
 
     home-manager.users.${username} = {
