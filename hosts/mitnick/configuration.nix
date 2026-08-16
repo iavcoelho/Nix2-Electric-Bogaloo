@@ -24,6 +24,7 @@
     shell.enable = true;
     podman.enable = true;
     pentesting.enable = true;
+    niri.enable = true;
   };
 
   my.services = {
