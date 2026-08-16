@@ -167,7 +167,6 @@ in
                   currentIndex: 0
 
                   delegate: Rectangle {
-                    required property var modelData
                     width: results.width
                     implicitHeight: 44
                     radius: 8
@@ -184,19 +183,19 @@ in
                       IconImage {
                         Layout.preferredWidth: 28
                         Layout.preferredHeight: 28
-                        source: Quickshell.iconPath(modelData.entry.icon)
+                        source: Quickshell.iconPath(model.entry.icon)
                       }
 
                       Text {
                         Layout.fillWidth: true
-                        text: modelData.entry.name
+                        text: model.entry.name
                         color: "#eeeeee"
                         font.pointSize: 14
                         elide: Text.ElideRight
                       }
 
                       Text {
-                        text: modelData.entry.genericName
+                        text: model.entry.genericName
                         color: "#aaaaaa"
                         font.pointSize: 11
                         elide: Text.ElideRight
