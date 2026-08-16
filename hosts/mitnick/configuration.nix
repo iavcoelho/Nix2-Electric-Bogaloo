@@ -14,6 +14,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "video"
     ];
   };
 
@@ -24,7 +25,7 @@
     shell.enable = true;
     podman.enable = true;
     pentesting.enable = true;
-    niri.enable = true;
+    hyprland.enable = true;
   };
 
   my.services = {
