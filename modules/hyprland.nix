@@ -37,7 +37,7 @@ let
 
     monitor = {
       output = "Virtual-1";
-      mode = "1920x1200@60";
+      mode = "2560x1600@60";
       position = "auto";
       scale = 1;
     };
