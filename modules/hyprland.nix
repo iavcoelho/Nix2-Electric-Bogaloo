@@ -32,6 +32,7 @@ let
       input = {
         kb_layout = "pt";
         kb_variant = "mac";
+        natural_scroll = true;
       };
     };
 
@@ -47,7 +48,7 @@ let
       (mkBind "Q" "window.close()")
       (mkBind "SHIFT + E" "exit()")
 
-      (mkBind "SPACE" "global(\"quickshell:launcher\")")
+      (mkBind "SPACE" "exec_cmd(\"rofi -show drun\")")
 
       (mkFocus "left")
       (mkFocus "right")
@@ -103,7 +104,10 @@ in
     };
 
     home-manager.users.${username} = {
-      home.packages = with pkgs; [ foot ];
+      home.packages = with pkgs; [
+        foot
+        rofi
+      ];
 
       xdg.configFile."foot/foot.ini".text = ''
         [main]

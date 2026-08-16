@@ -27,7 +27,6 @@
     pentesting.enable = true;
     hyprland.enable = true;
     firefox.enable = true;
-    quickshell.enable = true;
   };
 
   my.services = {
