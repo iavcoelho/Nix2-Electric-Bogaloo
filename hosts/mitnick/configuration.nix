@@ -30,7 +30,7 @@
     shell.enable = true;
     podman.enable = true;
     pentesting.enable = true;
-    hyprland.enable = true;
+    xfce.enable = true;
     firefox.enable = true;
   };
 
