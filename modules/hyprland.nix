@@ -34,6 +34,17 @@ let
         kb_variant = "mac";
         natural_scroll = true;
       };
+
+      binds = {
+        # Apple VZ "virtual usb digitizer" drops button-release events,
+        # causing stuck-button window drags. Require real cursor movement
+        # before a drag begins, so accidental drags don't trigger.
+        drag_threshold = 30;
+      };
+
+      general = {
+        resize_on_border = false;
+      };
     };
 
     monitor = {
