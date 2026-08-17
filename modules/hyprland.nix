@@ -35,13 +35,6 @@ let
         natural_scroll = true;
       };
 
-      binds = {
-        # Apple VZ "virtual usb digitizer" drops button-release events,
-        # causing stuck-button window drags. Require real cursor movement
-        # before a drag begins, so accidental drags don't trigger.
-        drag_threshold = 30;
-      };
-
       general = {
         resize_on_border = false;
       };
@@ -116,6 +109,16 @@ in
   config = lib.mkIf (cfg.enable && pkgs.stdenv.isLinux) {
     programs.hyprland.enable = true;
     hardware.graphics.enable = true;
+
+    # On this software-rendered VM, libinput's button-debounce plugin misses
+    # its timer deadlines ("scheduled expiry is in the past ... your system is
+    # too slow") and swallows button-release events, turning clicks into stuck
+    # window drags. Disable debounce for mice via a libinput quirk.
+    environment.etc."libinput/local-overrides.quirks".text = ''
+      [VM mice: disable libinput button debounce]
+      MatchUdevType=mouse
+      ModelBouncingKeys=1
+    '';
 
     services.greetd = {
       enable = true;
