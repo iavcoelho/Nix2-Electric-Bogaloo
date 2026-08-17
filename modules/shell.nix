@@ -15,18 +15,25 @@ in
     programs.fish.enable = true;
     users.users.${username}.shell = pkgs.fish;
 
-    programs.zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    programs = {
 
-    programs.tmux = {
-      enable = true;
-      clock24 = true;
-    };
+      zoxide = {
+        enable = true;
+        enableFishIntegration = true;
+      };
 
-    programs.lazygit = {
-      enable = true;
+      tmux = {
+        enable = true;
+        clock24 = true;
+      };
+
+      lazygit = {
+        enable = true;
+      };
+
+      bat = {
+        enable = true;
+      };
     };
 
     environment.systemPackages = with pkgs; [
