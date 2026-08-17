@@ -20,6 +20,15 @@ in
       enableFishIntegration = true;
     };
 
+    programs.tmux = {
+      enable = true;
+      clock24 = true;
+    };
+
+    programs.lazygit = {
+      enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       git
       gh
