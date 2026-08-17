@@ -10,6 +10,11 @@
 
   environment.etc.hosts.enable = false;
 
+  networking.firewall.trustedInterfaces = [
+    "lo"
+    "tun0"
+  ];
+
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
