@@ -43,6 +43,15 @@ let
       scale = 1.33;
     };
 
+    window_rule = {
+      match = {
+        class = "(?i).*burp.*";
+      };
+      stay_focused = true;
+      float = true;
+      fullscreen = false;
+    };
+
     bind = [
       (mkBind "T" "exec_cmd(\"foot\")")
       (mkBind "Q" "window.close()")
