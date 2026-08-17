@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  username,
   ...
 }:
 let
@@ -29,12 +28,5 @@ in
       MatchUdevType=mouse
       ModelBouncingKeys=1
     '';
-
-    home-manager.users.${username} = {
-      home.packages = with pkgs; [
-        foot
-        rofi
-      ];
-    };
   };
 }
