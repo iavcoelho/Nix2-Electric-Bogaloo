@@ -45,6 +45,8 @@ in
       devenv
       python3
       ripgrep
+      file
+      jq
     ];
   };
 }
